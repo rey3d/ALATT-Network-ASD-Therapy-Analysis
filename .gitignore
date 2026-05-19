@@ -1,3 +1,13 @@
+# Virtual environments
+.venv/
+venv/
+env/
+# Output files (optional, if heavy)
+*.mp4
+*.avi
+*.npy
+*.csv
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
