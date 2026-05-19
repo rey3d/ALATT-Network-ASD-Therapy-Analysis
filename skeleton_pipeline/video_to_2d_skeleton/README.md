@@ -124,8 +124,3 @@ All dependencies are listed in `requirements.txt`. Key libraries:
   except `z` which is relative depth.
 
 ---
-
-## Author
-
-[Your Name] — `skeleton_pipeline/video_to_2d_skeleton`  
-Part of the ALATT-Network ASD Therapy Analysis project.

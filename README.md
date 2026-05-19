@@ -17,42 +17,50 @@ using an LSTM-based deep learning model.
 
 ### Pipeline Flow
 
-Input Video
-↓
-[Module 1] Video → 2D Skeleton coordinates ->[Module 2] 2D Skeleton → Stick-figure Animation
-↓
+```
+                        ┌──────────────────────────────────────┐
+                        │            Input Video               │
+                        └──────────────────┬───────────────────┘
+                                           │
+                                           ▼
+                        ┌──────────────────────────────────────┐
+                        │  Module 1: Video → 2D Skeleton       │
+                        │            Coordinates               │
+                        └─────────┬────────────────┬───────────┘
+                                  │                │
+                    ┌─────────────┘                └─────────────┐
+                    ▼                                             ▼
+   ┌────────────────────────────┐           ┌────────────────────────────────┐
+   │ Module 2: 2D Skeleton →    │           │ Module 3: LSTM Model →         │
+   │    Stick-figure Animation  │           │    Therapy Task Classification │
+   └────────────────────────────┘           └────────────────────────────────┘
 [Module 3] LSTM Model → Therapy Task Classification
+```
 
 ## Repository Structure
 
+```
 ALATT-Network-ASD-Therapy-Analysis/
-│
 ├── README.md
 ├── .gitignore
-│
-├── skeleton_pipeline/                  ← Pose extraction & animation
-│   │
-│   ├── video_to_2d_skeleton/           ← Module 1
+├── skeleton_pipeline/          ← Pose extraction & animation
+│   ├── video_to_2d_skeleton/   ← Module 1
 │   │   ├── video_to_2d_skeleton.py
 │   │   ├── requirements.txt
 │   │   └── README.md
-│   │
-│   └── skeleton_to_animation/          ← Module 2
+│   └── skeleton_to_animation/  ← Module 2
 │       ├── skeleton_to_animation.py
 │       ├── requirements.txt
 │       └── README.md
-│
-├── lstm_model/                         ← Module 3: Classification
+├── lstm_model/                 ← Module 3: Classification
 │   ├── ALATT_classification.ipynb
 │   ├── requirements.txt
 │   └── README.md
-│
-├── data/                               ← Input data (not tracked by git)
+├── data/                       ← Input data (not tracked by git)
 │   └── .gitkeep
-│
-└── assets/                             ← Demo outputs, sample images
-└── .gitkeep
-
+└── assets/                     ← Demo outputs, sample images
+    └── .gitkeep
+```
 ---
 
 ## Modules
