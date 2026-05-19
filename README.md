@@ -1,6 +1,3 @@
-# ALATT-Network-ASD-Therapy-Analysis
-ASD therapy monitoring | Video → 2D skeleton extraction → animation | LSTM classification using ALATT-Network
-
 # ALATT-Network: Automated ASD Therapy Task Classification
 
 A two-part framework for automated classification and monitoring of
@@ -34,7 +31,6 @@ using an LSTM-based deep learning model.
    │ Module 2: 2D Skeleton →    │           │ Module 3: LSTM Model →         │
    │    Stick-figure Animation  │           │    Therapy Task Classification │
    └────────────────────────────┘           └────────────────────────────────┘
-[Module 3] LSTM Model → Therapy Task Classification
 ```
 
 ## Repository Structure
